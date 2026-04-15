@@ -164,7 +164,7 @@ k6 prints a live progress bar while running, then a full summary. Here is what t
      vus_max........................: 10      min=10 max=10
 ```
 
-**Key lines to focus on:**
+**lines to focus on:**
 
 - `http_req_duration p(95)=31ms` → 95% of requests finished in 31ms. Our threshold was 200ms. ✓ PASS
 - `http_req_failed 0.00%` → Zero errors. ✓ PASS
@@ -180,9 +180,9 @@ k6 prints a live progress bar while running, then a full summary. Here is what t
 | Throughput | ~20–50 req/s |
 | Threshold status | **PASS** (green checkmarks) |
 
-### Discussion: Does this look healthy?
+### Analysis: Does this look healthy?
 
-Take a few minutes to discuss these questions with your group:
+Take a few minutes to analyse these questions:
 
 1. **"The p95 is 31ms and everything passed. Does that mean this API is production-ready?"**
    - Think about: what load are real users? Are 10 VUs realistic?
@@ -290,7 +290,7 @@ Compare the two summaries side by side:
 - **CPU-bound work** — image processing, cryptography, report generation
 - **Memory pressure** — garbage collection pauses, swap
 
-### Discussion: Going deeper
+### Deeper Analysis
 
 1. **"task_creation_errors is higher than http_req_failed — what does that tell us?"**
    - Write operations (POST) failed more than reads (GET). Why might writes be more expensive?
@@ -306,7 +306,7 @@ Compare the two summaries side by side:
 
 ---
 
-## Part 5: Going Further
+## Part 5: Further Analysis
 
 ### Things to try
 
